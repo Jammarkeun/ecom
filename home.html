@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome, {{ user.first_name }}!</h1>
+<h2>Seller List</h2>
+
+<table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Joined Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for seller in sellers %}
+        <tr>
+            <td>{{ seller.id }}</td>
+            <td>{{ seller.name }}</td>
+            <td>{{ seller.email }}</td>
+            <td>{{ seller.phone }}</td>
+            <td>{{ seller.address }}</td>
+            <td>{{ seller.joined_date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
